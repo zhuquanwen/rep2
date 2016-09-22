@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="thymeleaf/bootstrap/bootstrapheader :: header">
+  
+</head>
+<title>测试bootstrap的网格</title>
+<body>
+	<div class="container">
+      <div class="row">
+      	<div class="col-xs-6 col-sm-3 col-md-6">
+      		第一个
+      	</div>
+      		<div class="col-xs-6 col-sm-3 col-md-6">
+      		第二个
+      	</div>
+      	<div class="clearfix visible-sm"></div>
+      		<div class="col-xs-6 col-sm-3 col-md-6">
+      		第三个
+      	</div>
+      		<div class="col-xs-6 col-sm-3 col-md-6">
+      		第四个
+      	</div>
+      </div>
+      
+       <div class="row">
+      	<div class="col-xs-6 col-sm-3 col-md-6">
+      		第一个
+      	</div>
+      		<div class="col-xs-6 col-sm-3 col-md-6">
+      		第二个
+      	</div>
+      		<div class="col-xs-6 col-sm-3 col-md-6">
+      		第三个
+      	</div>
+      		<div class="col-xs-6 col-sm-3 col-md-6">
+      		第四个
+      	</div>
+      </div>
+      <!-- 列偏移 -->
+      <div class="row" >
+      <div class="col-xs-6 col-md-offset-3" 
+         style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing 
+            elit.
+         </p>
+      </div>
+
+   </div>
+	</div>
+</body>
+</html>

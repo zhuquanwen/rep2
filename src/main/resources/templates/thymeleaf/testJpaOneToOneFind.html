@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>testObject</title>
+</head>
+<body>
+	<table>
+		<tr th:each="team:${list}">
+			<td th:text="${team.student.name}"></td>
+			<td th:text="${team.area}"></td>
+		</tr>
+	</table>
+</body>
+</html>

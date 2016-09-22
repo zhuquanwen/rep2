@@ -1,0 +1,20 @@
+一、druid 加密数据库用户名或密码:
+java -cp D:/druid-1.0.13.jar com.alibaba.druid.filter.config.ConfigTools 用户名/密码
+
+二、生成HTTPS/SSL密钥
+是用SpringBoot开发项目要求用HTTPS协议进行访问，配置很简单，需要简单的几步就可以完成。 
+1、需要一个证书，可以自己生成或者购买。下面是我们通过keytool自己生成。 
+生成命令： keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+
+会生成一个PKCS12格式的叫做keystore.p12的证书，之后启动Spring Boot时会引用这个证书。
+
+2、在application.properties中配置HTTPS
+
+server.port:8443
+server.ssl.key-store: classpath:keystore.p12
+server.ssl.key-store-password: aqjcpt
+server.ssl.keyStoreType: PKCS12
+server.ssl.keyAlias: tomcat
+
+
+这就完成了SpringBoot的HTTPS协议配置，重新启动后访问https://localhost:8443/proName 即可

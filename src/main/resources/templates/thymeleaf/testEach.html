@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>testEach</title>
+</head>
+<body>
+	<table>
+		<tbody th:remove="all-but-first">
+			<tr th:each="tt:${list}">
+				<td th:text="${tt.id}">1111</td>
+				<td th:text="${tt.name}">zhuquanwen</td>
+			</tr>
+			<tr >
+				<td >1111</td>
+				<td >zhuquanwen</td>
+			</tr>
+			<tr >
+				<td >1111</td>
+				<td >zhuquanwen</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

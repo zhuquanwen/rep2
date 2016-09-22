@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="thymeleaf/websocket/websocketHeader :: header">
+  
+</head>
+<title>测试 stomp(websocket广播方式)</title>
+<body>
+	<input type="button" value="连接" onclick="connect();"/>
+	<input type="button" value="断开连接" onclick="disConnect();"/>
+	<br/>
+	<!-- 1对1发送的内容:<input type="text" id="mesInput1" /> <input type="button" value="发送" onclick="sendMes1();"/> -->
+	发送的内容:<input type="text" id="mesInput" /> <input type="button" value="发送" onclick="sendMes();"/>
+	<br/>
+	<div id="resDiv1"></div>
+	<div id="resDiv"></div>
+	<script type="text/javascript">
+		var stompClient=null;
+		function connect(){
+			var socket = new SockJS("/test1/endpointTest");
+			stompClient=Stomp.over(socket);
+			stompClient.connect({},function(frame){
+				console.log("连接了!!!");
+				stompClient.subscribe('/topic/send',function(response){
+					console.log(response);
+					$("#resDiv").html(JSON.parse(response.body).message);
+				});
+				/* stompClient.subscribe('/user/send',function(response){
+					console.log(response);
+					$("#resDiv1").html(JSON.parse(response.body));
+				}); */
+			});
+		}
+		function disConnect(){
+			if(stompClient!=null){
+				stompClient.disconnect();
+			}
+		}
+		function sendMes(){
+			var mes = $("#mesInput").val();
+			stompClient.send("/app/welcom",{},JSON.stringify({message:mes}));
+		}
+		/* function sendMes1(){
+			var mes = $("#mesInput1").val();
+			stompClient.send("/user/message",{},JSON.stringify({message:mes,id:'testUserId'}));
+		} */
+	</script>
+</body>
+</html>

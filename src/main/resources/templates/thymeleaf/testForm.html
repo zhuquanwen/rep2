@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>testForm</title>
+</head>
+<body>
+	<form action="#" th:action="@{${formAction}}" th:object="${testTable1}" th:method="post">
+		<input type="text" th:field="*{name}"/>
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>

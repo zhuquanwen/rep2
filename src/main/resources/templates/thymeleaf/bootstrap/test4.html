@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="thymeleaf/bootstrap/bootstrapheader :: header">
+  
+</head>
+<title>测试bootstrap的网格</title>
+<!--第一种是 <code> 标签。如果您想要内联显示代码，那么您应该使用 <code> 标签。
+第二种是 <pre> 标签。如果代码需要被显示为一个独立的块元素或者代码有多行，那么您应该使用 <pre> 标签。
+请确保当您使用 <pre> 和 <code> 标签时，开始和结束标签使用了 unicode 变体： &lt; 和 &gt;。  -->
+<body>
+	<div class="container">
+      <div class="row">
+      	<div class="col-xs-6 col-sm-6 ">
+      		<table class="table table-striped table-bordered table-hover table-condensed">
+			  <caption>基本的表格布局</caption>
+			  <thead>
+			    <tr>
+			      <th>名称</th>
+			      <th>城市</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>Tanmay</td>
+			      <td>Bangalore</td>
+			    </tr>
+			    <tr>
+			      <td>Sachin</td>
+			      <td>Mumbai</td>
+			    </tr>
+			  </tbody>
+			</table>
+      	</div>
+      	<div class="col-xs-6 col-sm-6 ">
+      	<!-- 通过把任意的 .table 包在 .table-responsive class 内，您可以让表格水平滚动以适
+      	应小型设备（小于 768px）。当在大于 768px 宽的大型设备上查看时，您将看不到任何的差别。
+      	 -->
+      		<div class="table-responsive">
+			  <table class="table">
+			    <caption>响应式表格布局</caption>
+			    <thead>
+			      <tr>
+			        <th>产品</th>
+			        <th>付款日期</th>
+			        <th>状态</th></tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			        <td>产品1</td>
+			        <td>23/11/2013</td>
+			        <td>待发货</td></tr>
+			      <tr>
+			        <td>产品2</td>
+			        <td>10/11/2013</td>
+			        <td>发货中</td></tr>
+			      <tr>
+			        <td>产品3</td>
+			        <td>20/10/2013</td>
+			        <td>待确认</td></tr>
+			      <tr>
+			        <td>产品4</td>
+			        <td>20/10/2013</td>
+			        <td>已退货</td></tr>
+			    </tbody>
+			  </table>
+			</div>
+      	</div>	
+      </div>
+      
+      
+	</div>
+</body>
+</html>

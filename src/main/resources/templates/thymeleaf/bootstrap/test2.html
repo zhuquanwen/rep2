@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="thymeleaf/bootstrap/bootstrapheader :: header">
+  
+</head>
+<title>测试bootstrap的网格</title>
+<body>
+	<div class="container">
+      <div class="row">
+      	<div class="col-xs-6 col-sm-2 ">
+      		<h1>我是标题1<small>副标题1</small></h1>
+      		<h2>我是标题1</h2>
+      		<p class="lead">段落、、、、测试测试</p>
+      		<p >段落、、、、测试测试</p>
+      	</div>
+      		<div class="col-xs-6 col-sm-2 ">
+	      		<small>本行内容是在标签内</small><br/>
+				<strong>本行内容是在标签内</strong><br/>
+				<em>本行内容是在标签内，并呈现为斜体</em><br/>
+				<p class="text-left">向左对齐文本</p>
+				<p class="text-center">居中对齐文本</p>
+				<p class="text-right">向右对齐文本</p>
+				<p class="text-muted">本行内容是减弱的</p>
+				<p class="text-primary">本行内容带有一个 primary class</p>
+				<p class="text-success">本行内容带有一个 success class</p>
+				<p class="text-info">本行内容带有一个 info class</p>
+				<p class="text-warning">本行内容带有一个 warning class</p>
+				<p class="text-danger">本行内容带有一个 danger class</p>
+      		</div>
+      	<div class="clearfix visible-sm"></div>
+      		<div class="col-xs-6 col-sm-2 ">
+      			<!-- HTML 元素提供了用于缩写的标记，
+      			比如 WWW 或 HTTP。Bootstrap 定义 <abbr> 元素的样式为显示在文本底部的
+      			一条虚线边框，当鼠标悬停在上面时会显示完整的文本（只要您为 <abbr> title
+      			 属性添加了文本）。为了得到一个更小字体的文本，请添加 .initialism 到 <abbr>。 -->
+      			<abbr title="World Wide Web">WWW</abbr><br/>
+				<abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+      		</div>
+      		<div class="col-xs-6 col-sm-2 ">
+	      		<address>
+				  <strong>Some Company, Inc.</strong><br/>
+				  007 street<br/>
+				  Some City, State XXXXX<br/>
+				  <abbr title="Phone">P:</abbr> (123) 456-7890
+				</address>
+				<address>
+				  <strong>Full Name</strong><br/>
+				  <a href="mailto:#">mailto@somedomain.com</a>
+				</address>
+	      	</div>
+	      	
+	      	<div class="col-xs-6 col-sm-2 ">
+	      		<blockquote>
+				  <p>
+				  这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。
+				  </p>
+				</blockquote>
+				<blockquote>
+				  这是一个带有源标题的引用。
+				  <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+				</blockquote>
+				<blockquote class="pull-right">
+				  这是一个向右对齐的引用。
+				  <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+				</blockquote>
+	      	</div>
+	      	
+	      	<div class="col-xs-6 col-sm-2 ">
+	      		<h4>有序列表</h4>
+					<ol>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+					</ol>
+					<h4>无序列表</h4>
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+					</ul>
+					<h4>未定义样式列表</h4>
+					<ul class="list-unstyled">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+					</ul>
+					<h4>内联列表</h4>
+					<ul class="list-inline">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+					</ul>
+					<h4>定义列表</h4>
+					<dl>
+						<dt>Description 1</dt>
+						<dd>Item 1</dd>
+						<dt>Description 2</dt>
+						<dd>Item 2</dd>
+					</dl>
+					<h4>水平的定义列表</h4>
+					<dl class="dl-horizontal">
+						 <dt>Description 1</dt>
+						 <dd>Item 1</dd>
+						 <dt>Description 2</dt>
+						 <dd>Item 2</dd>
+					</dl>
+	      	</div>
+      </div>
+      
+      
+	</div>
+</body>
+</html>

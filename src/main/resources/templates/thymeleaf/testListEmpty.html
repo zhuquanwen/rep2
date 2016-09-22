@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="thymeleaf/includeResource :: header">
+<meta charset="UTF-8" />
+
+
+	
+</head>
+<title>测试集合是否为空，测试JS获取属性</title>
+<body>
+	<script th:inline="javascript">
+		$(function(){
+			console.log(1111);
+			var list=[[${list}]];
+			console.log(list);
+			$("#oneDiv").text(list[0].url);
+		})
+	
+	</script>
+	<div id="oneDiv"></div>
+	<div th:include="thymeleaf/includeResource :: #gy"></div>
+	<div th:if="${not #lists.isEmpty(list)}">
+		<div th:each="li:${list}">
+			<div th:text="${li.url}"></div>
+		</div>
+	</div>
+</body>
+</html>

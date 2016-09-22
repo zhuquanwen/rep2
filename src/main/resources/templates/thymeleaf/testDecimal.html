@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>testDecimal</title>
+</head>
+<body>
+	<span th:text="${#numbers.formatDecimal(price,2,2)}">100.00</span>
+</body>
+</html>

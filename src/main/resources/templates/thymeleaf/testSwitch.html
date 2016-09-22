@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>testSwitch</title>
+</head>
+<body>
+	<div th:switch="${name}">
+		<span th:case="'A'">AAAA</span>
+		<span th:case="'B'">BBBB</span>
+		<span th:case="*">****</span>
+	</div>
+</body>
+</html>
