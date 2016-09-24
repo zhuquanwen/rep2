@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zqw.autoConfigTest.service.HaddlerService;
+/*import com.zqw.autoConfigTest.service.HaddlerService;*/
 import com.zqw.le.aop.Log;
 import com.zqw.le.aop.OperateType;
 import com.zqw.le.config.TestOtherConfig;
@@ -21,8 +21,8 @@ public class TestController {
 	private TestOtherConfig testOtherConfig;
 	@Autowired
 	private TestService testService;
-	@Autowired
-	private HaddlerService haddlerService;
+	/*@Autowired
+	private HaddlerService haddlerService;*/
 	
 	@Log(name="测试",remark="测试日志可用性",operateType=OperateType.TEST)
 	@RequestMapping("/")
@@ -50,6 +50,7 @@ public class TestController {
 	//测试引入自己创建的一个spring boot 工程的自动配置功能
 	@RequestMapping("/testOtherBootAutoConfig")
 	public String testOtherBootAutoConfig(){
-		return haddlerService.getMsg();
+		/*return haddlerService.getMsg();*/
+		return null;
 	}
 }

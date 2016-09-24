@@ -29,6 +29,7 @@ import com.zqw.le.domain.p.oneMany.Team;
 import com.zqw.le.domain.p.secur.Role;
 import com.zqw.le.domain.s.TestTable2;
 import com.zqw.le.domain.s.TestTable2Repository;
+import com.zqw.le.jpa.CustomerSpecs;
 import com.zqw.le.jpaExpand.Criteria;
 import com.zqw.le.jpaExpand.Restrictions;
 import com.zqw.le.service.AuthorService;
@@ -275,5 +276,10 @@ public class JpaController {
 		role.getResources().get(0).setDescription(UUID.randomUUID().toString());
 		roleService.save(role);
 		return role;
+	}
+	//测试JPA的 speXXX
+	@RequestMapping("testJpaSpe")
+	public List<TestTable1> testJpaSpe(){
+		return testTable1Repository.findAll(CustomerSpecs.test1TableSomething());
 	}
 }
