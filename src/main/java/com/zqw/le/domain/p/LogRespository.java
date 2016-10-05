@@ -1,7 +1,7 @@
 package com.zqw.le.domain.p;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.zqw.le.domain.p.jpa.CustomRepository;
 
-public interface LogRespository extends JpaRepository<LogEntity, Long>{
+public interface LogRespository extends CustomRepository<LogEntity , Long>{
 	
 }

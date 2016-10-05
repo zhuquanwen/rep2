@@ -118,7 +118,7 @@ public class ThymeLeafTestController {
 	@RequestMapping("/testEach")
 	public  ModelAndView testEach(){
 		ModelAndView mav=new ModelAndView("/thymeleaf/testEach");
-		List<TestTable1> tt1s=testTable1Repository.findAll();
+		List<TestTable1> tt1s=(List<TestTable1>) testTable1Repository.findAll();
 		/*tt1s=null;*/
 		mav.addObject("list",tt1s);
 		return mav;

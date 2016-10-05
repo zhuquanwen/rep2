@@ -11,9 +11,10 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.zqw.le.domain.p.jpa.CustomRepository;
 import com.zqw.le.service.BaseService;
 @Transactional(value="transactionManagerPrimary",isolation = Isolation.DEFAULT,propagation = Propagation.REQUIRED)
-public class BaseServiceImpl<R extends Object,T extends JpaRepository> implements BaseService<R,T>{
+public class BaseServiceImpl<R extends Object,T extends CustomRepository> implements BaseService<R,T>{
 	@Autowired
 	private T t;
 	/**查询全部*/
@@ -44,6 +45,11 @@ public class BaseServiceImpl<R extends Object,T extends JpaRepository> implement
 	public void delete(R r){
 		t.delete(r);
 		
+	}
+
+	@Override
+	public List<T> findByAuto(T t) {
+		return t.findByAuto(t);
 	}
 
 	

@@ -7,8 +7,11 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.zqw.le.domain.p.jpa.CustomRepository;
+
 @CacheConfig(cacheNames = "roles")
-public interface RoleDao extends JpaRepository<Role, Long>{
+public interface RoleDao extends CustomRepository<Role, Long>{
 	@Cacheable
 	@Override
 	List<Role> findAll();

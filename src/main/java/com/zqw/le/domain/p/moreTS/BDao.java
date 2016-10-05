@@ -2,6 +2,9 @@ package com.zqw.le.domain.p.moreTS;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BDao extends JpaRepository<B, Long>{
+import com.zqw.le.domain.p.jpa.CustomRepository;
+
+
+public interface BDao extends CustomRepository<B, Long>{
 
 }

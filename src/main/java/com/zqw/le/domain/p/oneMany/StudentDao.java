@@ -2,6 +2,9 @@ package com.zqw.le.domain.p.oneMany;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentDao extends JpaRepository<Student, Long>{
+import com.zqw.le.domain.p.jpa.CustomRepository;
+
+
+public interface StudentDao extends CustomRepository<Student, Long>{
 	
 }

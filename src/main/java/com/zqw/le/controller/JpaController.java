@@ -22,6 +22,7 @@ import com.zqw.le.domain.p.TestTable1;
 import com.zqw.le.domain.p.TestTable1Repository;
 import com.zqw.le.domain.p.TestUuid;
 import com.zqw.le.domain.p.TestUuidRepository;
+import com.zqw.le.domain.p.jpa.CustomerSpecs;
 import com.zqw.le.domain.p.oneMany.Author;
 import com.zqw.le.domain.p.oneMany.Book;
 import com.zqw.le.domain.p.oneMany.Student;
@@ -29,7 +30,6 @@ import com.zqw.le.domain.p.oneMany.Team;
 import com.zqw.le.domain.p.secur.Role;
 import com.zqw.le.domain.s.TestTable2;
 import com.zqw.le.domain.s.TestTable2Repository;
-import com.zqw.le.jpa.CustomerSpecs;
 import com.zqw.le.jpaExpand.Criteria;
 import com.zqw.le.jpaExpand.Restrictions;
 import com.zqw.le.service.AuthorService;
@@ -59,6 +59,7 @@ public class JpaController {
 	private AuthorService authorService;
 	@Autowired
 	private RoleService roleService;
+	
 	
 	/**主数据库查询*/
 	@RequestMapping("/getTestTable1")
@@ -281,5 +282,25 @@ public class JpaController {
 	@RequestMapping("testJpaSpe")
 	public List<TestTable1> testJpaSpe(){
 		return testTable1Repository.findAll(CustomerSpecs.test1TableSomething());
+	}
+	
+	//测试JPA的 自定义CustomRepository
+	@RequestMapping("testJpaCustomRe")
+	public List<TestTable1> testJpaCustomRe(){
+		return testTable1Repository.getMapResult("select * from test_table1");
+	}
+	
+	//测试JPA的 自定义CustomRepository
+	@RequestMapping(value="testJpaCustomRe1",produces={"application/json;charset=UTF-8"})
+	public List<TestTable1> testJpaCustomRe1(){
+		try{
+		TestTable1 tt = new TestTable1();
+		tt.setName("测试");
+		List<TestTable1> tts =  testTable1Repository.findByAuto(tt);
+		return tts;
+		}catch(Exception e ){
+			e.printStackTrace();
+			return null;
+		}		
 	}
 }

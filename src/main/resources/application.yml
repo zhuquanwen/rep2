@@ -74,8 +74,16 @@ spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDiale
 spring.jpa.properties.hibernate.hbm2ddl.auto: update
 spring.jpa.properties.hibernate.show_sql: true
 spring.jpa.properties.hibernate.format_sql: true
+spring.jackson.serialization.indent_output: true
 
 spring.cache.ehcache.config: classpath:ehcache.xml   
+
+spring.data.rest.base-path: /api
+#spring.data.rest.default-page-size: 10
+#spring.data.rest.limit-param-name: String
+#spring.data.rest.max-page-size: 200
+#spring.data.rest.return-body-on-create: true
+#spring.data.rest.return-body-on-update: true
 
 #favicon功能
 
